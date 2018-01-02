@@ -17,3 +17,15 @@ $ cd Docker-My-Traceroute
 $ docker build -t raisiqueira/mtr .
 $ docker run --rm -ti raisiqueira/mtr mtr raisiqueira.me
 ```
+
+## Create a Alias
+
+Open the .bashrc or .zshrc (in my case) and add this lines:
+
+```bash
+# Alias MTR
+function mtr() {
+docker run --rm -ti raisiqueira/mtr mtr "$@"
+}
+alias mtr=mtr
+```
